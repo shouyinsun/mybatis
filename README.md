@@ -44,7 +44,8 @@ sqlSessionTemplate
 MapperScannerConfigurer 继承自 BeanDefinitionRegistryPostProcessor
 BeanDefinitionRegistryPostProcessor 继承自 BeanFactoryPostProcessor 并且在其之前执行
 如果参数中使用了placeholder,可以设置processPropertyPlaceHolders 属性,找出上下文中所有的 PropertyResourceConfigurer,
-模拟spring环境,在BeanFactoryPostProcessor之前替换对应placeholder属性
+模拟spring环境,新建一个beanFactory,注册进bean,然后调用prc.postProcessBeanFactory(factory)
+在BeanFactoryPostProcessor之前替换bean里对应placeholder属性
 
 
 
